@@ -1,25 +1,94 @@
-@media  (min-width: 1024px) {
-    .menu {
-        width: 25%;
-        border: 1px solid slategray;
-        border-radius: 10px;
-        margin: auto;
-        position: relative !important;
+@media (min-width: 1000px) {
+  .menu {
+    width: 25%;
+    border: 1px solid slategray;
+    border-radius: 10px;
+    margin: auto;
+    position: relative !important;
+  }
+
+ 
+
+  .menu .category-link {
+    white-space: nowrap;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .menu .header-menu {
+    position: static;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 400px){
+    .menu .categories {
+        padding-top: 100px !important;
       }
-  }
 
-
-
-  .menu .category .menu-item .menu-image{
-    width: 100px;
-    img{
+      .menu .header-menu {
+        position: fixed;
         width: 100%;
-    }
+        margin-bottom: 100px;
+        background-color: #fff;
+      }
+      
+      
+}
+
+.menu{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.menu .category .category-name {
+  background-color: #f8f9fb;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.menu .categories {
+    padding-bottom: 110px !important;
   }
 
-  .menu .category .menu-item{
-    display: flex;
-    align-items: center;
-  }
+.menu .category-link {
+  white-space: nowrap;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.menu .category-link a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  width: 200px;
+}
 
-  
+.menu .category .menu-item .menu-image {
+  width: 100px;
+  img {
+    width: 100%;
+  }
+}
+
+.menu .category .menu-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(204, 213, 221);
+}
+
+.menu .category .menu-item .menu-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.menu .category .menu-item .desc {
+  font-size: 12px;
+  width: 200px;
+}
+
+.menu .category .menu-item .price {
+    font-size: 14px;
+    font-weight: 700;
+  }

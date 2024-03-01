@@ -9,6 +9,13 @@
       }
   }
 
+  .show-qr-code{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+  }
+
 .hero {
   background: url("../../assets/image/motif.png");
   padding: 20px 20px 20px 20px;

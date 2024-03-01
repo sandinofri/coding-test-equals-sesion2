@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../../component/header/Header";
 import Footer from "../../component/footer/Footer";
 import "../homePage/home.css";
+import qr from "../../assets/image/03_Show QR.png";
+import PullToRefresh from 'react-simple-pull-to-refresh';
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -12,8 +14,8 @@ const Home = () => {
   const [qrQode, setQrcode] = useState();
   const [banner, setBanner] = useState([]);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const [isVisible, setIsVisibe] = useState(false);
   useEffect(() => {
-    
     const interval = setInterval(() => {
       changeBanner();
     }, 2000);
@@ -22,9 +24,9 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [currentBannerIndex]);
 
-  useEffect(()=>{
-    getData()
-  },[])
+  useEffect(() => {
+    getData();
+  }, []);
 
   const getData = async () => {
     try {
@@ -55,31 +57,46 @@ const Home = () => {
       prevIndex === banner.length - 1 ? 0 : prevIndex + 1
     );
   };
+
+  const handleRefresh = () => {
+    getData();
+  };
   return (
     <>
-      <div className="home">
-        <Header />
-        <div className="hero">
-          <div className="greeting shadow-sm">
-            <p>{greeting}</p>
-            <p>{name}</p>
-            <div className="saldo">
-              <div className="qr-container shadow-sm">
-                <img src={qrQode} alt="" />
-              </div>
-              <div>
-                <p>saldo Rp{saldo}</p>
-                <p>point {point}</p>
+      <PullToRefresh onRefresh={handleRefresh}>
+        {isVisible ? (
+          <div className="show-qr-code" onClick={() => setIsVisibe(!isVisible)}>
+            <img src={qr} alt="image" />
+          </div>
+        ) : (
+          <div className="home">
+            <Header />
+            <div className="hero">
+              <div className="greeting shadow-sm">
+                <p>{greeting}</p>
+                <p>{name}</p>
+                <div className="saldo">
+                  <div
+                    className="qr-container shadow-sm"
+                    onClick={() => setIsVisibe(true)}
+                  >
+                    <img src={qrQode} alt="" />
+                  </div>
+                  <div>
+                    <p>saldo Rp{saldo}</p>
+                    <p>point {point}</p>
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="banner">
+              <img src={banner[currentBannerIndex]} alt="" />
+              <p>View All</p>
+            </div>
+            <Footer />
           </div>
-        </div>
-        <div className="banner">
-          <img src={banner[currentBannerIndex]} alt="" />
-          <p>View All</p>
-        </div>
-        <Footer />
-      </div>
+        )}
+      </PullToRefresh>
     </>
   );
 };

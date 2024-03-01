@@ -38,23 +38,30 @@ const Menu = () => {
   return (
     <>
       <div className="menu shadow-sm">
-        <h1>Menu</h1>
+        <div className="header-menu">
+          <h1 className="text-center">Menu</h1>
+          <div className="category-link">
+            {categories.map((categoryLink) => (
+              <a href="">{categoryLink.category_name}</a>
+            ))}
+          </div>
+        </div>
+
         <div className="categories">
           {categories.map((category) => (
             <div key={category.category_name} className="category">
-              <h2 className="mb-2">{category.category_name}</h2>
+              <h2 className="mb-2 category-name">{category.category_name}</h2>
               <div className="menu-list">
                 {category.menu.map((menuItem) => (
-                  <div key={menuItem.name} className="menu-item">
+                  <div key={menuItem.name} className="menu-item ">
                     <div className="menu-image">
                       <img src={menuItem.photo} alt={menuItem.name} />
                     </div>
                     <div>
-                      <h3>{menuItem.name}</h3>
+                      <h3 className="menu-title">{menuItem.name}</h3>
                       <p className="desc">{menuItem.description}</p>
                     </div>
-
-                    <p> {menuItem.price}</p>
+                    <p className="price"> {menuItem.price}</p>
                   </div>
                 ))}
               </div>
