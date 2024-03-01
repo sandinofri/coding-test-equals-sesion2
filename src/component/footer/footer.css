@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (min-width : 1000px){
+    .footer{
+        width: 25%;
+    
+    }
+}
+
+.footer .home-icon {
+  width: 50px;
+  img {
+    width: 100%;
+  }
+}
+
+.footer .menu-icon {
+  width: 50px;
+  img {
+    width: 100%;
+  }
+}

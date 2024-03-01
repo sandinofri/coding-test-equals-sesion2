@@ -1,0 +1,50 @@
+
+
+@media  (min-width: 1024px) {
+    .home {
+        width: 25%;
+        border: 1px solid slategray;
+        border-radius: 10px;
+        margin: auto;
+      }
+  }
+
+.hero {
+  background: url("../../assets/image/motif.png");
+  padding: 20px 20px 20px 20px;
+}
+
+.hero .greeting {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hero .saldo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.home .hero .greeting .saldo .qr-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 70%;
+  }
+}
+
+.home .banner{
+    width: 100%;
+    margin-bottom: 100px;
+    img{
+        width: 100%;
+    }
+
+}

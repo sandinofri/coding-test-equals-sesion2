@@ -1,0 +1,25 @@
+@media  (min-width: 1024px) {
+    .menu {
+        width: 25%;
+        border: 1px solid slategray;
+        border-radius: 10px;
+        margin: auto;
+        position: relative !important;
+      }
+  }
+
+
+
+  .menu .category .menu-item .menu-image{
+    width: 100px;
+    img{
+        width: 100%;
+    }
+  }
+
+  .menu .category .menu-item{
+    display: flex;
+    align-items: center;
+  }
+
+  
